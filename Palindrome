@@ -1,0 +1,34 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+       String s = String.valueOf(x); 
+       String rev  = reverse(s);
+       System.out.println( "mai waapas a gya" + rev instanceof  String );
+      System.out.println( " fgghghfgh "+ s instanceof String );
+       if(s.equals(rev)){
+       //if (rev == s){
+           return true;
+       }
+       else{
+           return false;
+       }
+    }
+
+    public String reverse(String str){
+        
+       StringBuffer s = new StringBuffer(str);
+        int n = s.length();
+       System.out.println("inside rev" + n);
+        char ch;
+        for (int i = 0 ; i < n/2; i++){
+           ch =  s.charAt(i);
+            
+ 
+    System.out.println(s.charAt(n-i-1) + ", "+  (n-i-1)  + ", " + ch + " , "+ i)  ;
+           // s[i]=s.charAt(i);
+          s.setCharAt(i , s.charAt(n-i-1))  ;
+          s.setCharAt(n-i-1,ch);
+        }
+        System.out.println("\n  output" +  s.toString());
+        return s.toString();
+    }
+}
