@@ -1,0 +1,24 @@
+import java.lang.Math;
+ 
+class Solution {
+    public int reverse(int x) {
+        String s1  = "" ; 
+        Long y ;
+            if (x<0)
+                y = Long.valueOf(-1);
+            else
+                y=Long.valueOf(1);
+        while (x != 0){
+            s1 = s1 + Integer.toString(Math.abs(x%10));
+            x=x/10;
+            System.out.println("\n"+s1);
+        }
+         y = y * Long.valueOf(s1);   
+        
+
+        if ((y< Integer.MAX_VALUE) && (y> Integer.MIN_VALUE)) 
+            return y.intValue();// Integer.valueOf(s1);
+        else
+            return 0;
+    }
+}
